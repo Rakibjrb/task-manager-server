@@ -1,14 +1,13 @@
 const Tasks = require("../../../models/tasks/tasks");
 
-const postTask = async (req, res, next) => {
-  const task = req.body;
-
+const tasks = async (req, res, next) => {
+  const client = req.decoded.email;
   try {
-    const added = await Tasks.create(task);
-    res.send(added);
+    const tasks = await Tasks.find({ email: client });
+    res.send(tasks);
   } catch (error) {
     next(error);
   }
 };
 
-module.exports = postTask;
+module.exports = tasks;

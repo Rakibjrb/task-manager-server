@@ -25,6 +25,10 @@ const tasks = new Schema({
     required: true,
     type: String,
   },
+  startDate: {
+    required: true,
+    type: String,
+  },
 });
 
 const Tasks = model("Tasks", tasks, "tasks");
