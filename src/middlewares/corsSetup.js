@@ -1,6 +1,6 @@
 require("dotenv").config();
 const cors = require("cors");
-const createToken = require("./createToken");
+const createToken = require("../controllers/middlewares/createToken");
 
 const middlewares = (app, express) => {
   app.use(
